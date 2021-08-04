@@ -8,7 +8,7 @@ class RectangleTest {
     @Test
     void neRectangle_instantiatesCorrectly() {
         Rectangle testRectangle = new Rectangle(2,4);
-        assertEquals(true, testRectangle instanceof Rectangle);
+        assertTrue(true);
     }
 
     @Test
@@ -24,12 +24,25 @@ class RectangleTest {
     @Test
     void isSquare_whenNotsquare_false() {
         Rectangle testRectangle= new Rectangle(2,4);
-       assertEquals(false,testRectangle.isSquare());
+        assertFalse(testRectangle.isSquare());
     }
     @Test
     void isSquare_whensquare_true() {
         Rectangle testRectangle= new Rectangle(2,2);
-        assertEquals(true,testRectangle.isSquare());
+        assertTrue(testRectangle.isSquare());
     }
 
+    @Test
+    void newRectangleArea() {
+        Rectangle testRectangleArea= new Rectangle(2,2);
+        assertEquals(4,testRectangleArea.getArea());
+    }
+
+    @Test
+    void all_returnsAllInstancesOfRectangle_true() {
+        Rectangle firstRectangle= new Rectangle(2,10);
+        Rectangle secondRectangle= new Rectangle(5,6);
+        assertTrue(Rectangle.getAll().contains(firstRectangle));
+        assertTrue(Rectangle.getAll().contains(secondRectangle));
+    }
 }
